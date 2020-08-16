@@ -34,5 +34,5 @@ function test(cb){
     cb();
 }
 
-exports.default = series(js, serve, test);
-exports.test = series(js, serve, test);
+exports.default = series(js, serve);
+exports.test = test;
