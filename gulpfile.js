@@ -23,7 +23,7 @@
 
 
 const { src, dest, series } = require('gulp');
-const del = require('del');
+// const del = require('del');
 const jshint = require("gulp-jshint");
 
 const origin = 'src';
@@ -51,5 +51,5 @@ function serve(cb) {
     cb();
 }
 
-exports.default = series(js, serve, test);
+exports.default = series(js, serve);
 exports.test = test;
