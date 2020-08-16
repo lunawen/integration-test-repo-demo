@@ -3,7 +3,7 @@ console.log("Running webapp...");
 
 let Express = require('express');
 let app = new Express();
-let port = process.env.PORT || 1000;
+let port = process.env.PORT || 80;
 app.use(require('body-parser').urlencoded());
 app.use(require('body-parser').json());
 
