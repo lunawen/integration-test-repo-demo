@@ -1,7 +1,7 @@
 // "use strict";
 
 // let gulp = require("gulp");
-// let jshint = require("gulp-jshint");
+
 
 // gulp
 //     .task("jshint", gulp.series(() => {
@@ -24,14 +24,15 @@
 
 const { src, dest, series } = require('gulp');
 const del = require('del');
+const jshint = require("gulp-jshint");
 
 const origin = 'src';
 const destination = 'build';
 
-async function clean(cb) {
-    await del(destination);
-    cb();
-}
+// async function clean(cb) {
+//     await del(destination);
+//     cb();
+// }
 
 function js(cb) {
     src("./*.js")
@@ -50,5 +51,5 @@ function serve(cb) {
     cb();
 }
 
-exports.default = series(clean, js, serve, test);
+exports.default = series(js, serve, test);
 exports.test = test;
