@@ -11,13 +11,14 @@ let gulp = require("gulp");
 //             .pipe(jshint())
 //             .pipe(jshint.reporter("default"));
 //     }))
-//     .task("test", gulp.series(() => {
-//         require("./test.js");
-//     }))
+gulp
+    .task("test", gulp.series(() => {
+        require("./test.js");
+    }))
 gulp
     .task("serve", gulp.series(() => {
         require("./main.js");
     }));
 
 // gulp.task("default", gulp.parallel("jshint", "test", "serve"));
-gulp.task("default", gulp.series("serve"));
+gulp.task("default", gulp.series("serve", "test"));
